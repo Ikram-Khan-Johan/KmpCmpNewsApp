@@ -5,5 +5,6 @@ class Greeting {
 
     fun greet(): String {
         return "Hello, ${platform.name}!"
+//        return platform.showToast("Hello, ${platform.name}!")
     }
 }
