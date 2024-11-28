@@ -18,7 +18,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import cmpproject.composeapp.generated.resources.Res
 import cmpproject.composeapp.generated.resources.logo
 import coil3.compose.AsyncImage
@@ -109,7 +111,16 @@ fun HeadlineItem(data: Article) {
             modifier = Modifier.size(100.dp)
                 .clip(RoundedCornerShape(16.dp))
                 .padding(16.dp)
+
         )
-        Text(text = data.title, style = MaterialTheme.typography.h6)
+        Column (
+            modifier = Modifier.padding(vertical = 16.dp
+            )
+        ) {
+            Text(text = data.author.toString(), style = TextStyle(fontSize = 14.sp))
+            Text(text = data.title, style = TextStyle(fontSize = 16.sp))
+            Text(text = data.publishedAt, style = TextStyle(fontSize = 14.sp))
+        }
+
     }
 }
